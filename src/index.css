@@ -1,0 +1,562 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --color-cream: #faf7f2;
+    --color-gold: #c9a96e;
+    --color-gold-light: #e8d5b0;
+    --color-dark: #1a1612;
+    --color-charcoal: #2d2926;
+    --color-taupe: #8b7d6b;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section[id], div[id] {
+    scroll-margin-top: 96px;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-cream);
+    color: var(--color-dark);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .text-gold {
+    color: var(--color-gold);
+  }
+
+  .text-cream {
+    color: var(--color-cream);
+  }
+
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+
+  .bg-dark {
+    background-color: var(--color-dark);
+  }
+
+  .bg-charcoal {
+    background-color: var(--color-charcoal);
+  }
+
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--color-gold);
+    color: var(--color-cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-gold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-gold);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    color: var(--color-cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid rgba(250, 247, 242, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-cream);
+    background-color: rgba(250, 247, 242, 0.08);
+  }
+
+  .btn-outline-dark {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    color: var(--color-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-outline-dark:hover {
+    background-color: var(--color-dark);
+    color: var(--color-cream);
+  }
+
+  .divider-gold {
+    width: 40px;
+    height: 1px;
+    background-color: var(--color-gold);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+}
+
+/* ── RTL Support ─────────────────────────────────── */
+[dir="rtl"] body {
+  font-family: 'Cairo', 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+[dir="rtl"] .font-display {
+  font-family: 'Cairo', serif;
+  font-weight: 700;
+}
+
+[dir="rtl"] .font-body {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 400;
+}
+
+/* Arabic needs heavier weight to look good */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+  font-family: 'Cairo', serif;
+  font-weight: 700;
+}
+
+/* Flip letter-spacing for RTL */
+[dir="rtl"] [class*="tracking-"] {
+  letter-spacing: 0 !important;
+}
+
+/* Fix slide animations for RTL */
+[dir="rtl"] .slide-left {
+  transform: translateX(300px) !important;
+}
+[dir="rtl"] .slide-left.revealed {
+  transform: translateX(0) !important;
+}
+[dir="rtl"] .slide-right {
+  transform: translateX(-300px) !important;
+}
+[dir="rtl"] .slide-right.revealed {
+  transform: translateX(0) !important;
+}
+
+/* ── Dashboard Arabic typography ─────────────────── */
+[dir="rtl"] .dashboard-page [class*="font-body"] {
+  font-weight: 700;
+}
+
+[dir="rtl"] .dashboard-page [class*="text-[0."] {
+  font-size: 0.6rem !important;
+}
+
+[dir="rtl"] .dashboard-page [class*="text-[0.8rem]"] {
+  font-size: 0.95rem !important;
+}
+
+[dir="rtl"] .dashboard-page .wl-add-btn,
+[dir="rtl"] .dashboard-page .addr-submit,
+[dir="rtl"] .dashboard-page .ef-save,
+[dir="rtl"] .dashboard-page .mark-all,
+[dir="rtl"] .dashboard-page .ef-input,
+[dir="rtl"] .dashboard-page .addr-input {
+  font-family: 'Cairo', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+[dir="rtl"] .dashboard-page .wl-add-btn,
+[dir="rtl"] .dashboard-page .addr-submit,
+[dir="rtl"] .dashboard-page .ef-save {
+  font-size: 0.72rem !important;
+}
+
+/* ── Product page Arabic typography ─────────────────── */
+[dir="rtl"] .product-page [class*="font-body"],
+[dir="rtl"] .product-page [class*="font-light"] {
+  font-weight: 600;
+}
+
+[dir="rtl"] .product-page [class*="text-[0.4"] { font-size: 0.62rem !important; }
+[dir="rtl"] .product-page [class*="text-[0.5"] { font-size: 0.7rem !important; }
+[dir="rtl"] .product-page [class*="text-[0.6"] { font-size: 0.78rem !important; }
+[dir="rtl"] .product-page .font-body.text-xs { font-size: 0.85rem !important; }
+[dir="rtl"] .product-page .font-body.text-sm { font-size: 0.92rem !important; }
+
+[dir="rtl"] .product-page .pi-add-btn,
+[dir="rtl"] .product-page .pi-buy-btn,
+[dir="rtl"] .product-page .pt-tab {
+  font-family: 'Cairo', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  font-size: 0.7rem !important;
+}
+
+/* ── Dark Mode ─────────────────────────────────────── */
+:root {
+  --bg-primary:    #faf7f2;
+  --bg-secondary:  #f2f0ed;
+  --bg-white:      #ffffff;
+  --text-primary:  #1a1612;
+  --text-muted:    #8b7d6b;
+  --text-subtle:   #5a5048;
+  --border-color:  #ede8e0;
+  --border-light:  #e8e2d8;
+}
+
+.dark {
+  --bg-primary:    #111009;
+  --bg-secondary:  #1a1612;
+  --bg-white:      #1e1b16;
+  --text-primary:  #faf7f2;
+  --text-muted:    #a09080;
+  --text-subtle:   #c4b89a;
+  --border-color:  #2d2926;
+  --border-light:  #2a2520;
+}
+
+/* Apply to main backgrounds */
+.dark body { background-color: var(--bg-primary); color: var(--text-primary); }
+
+/* White sections → dark */
+.dark .bg-white,
+.dark [style*="background: #fff"],
+.dark [style*="background: #ffffff"],
+.dark [style*="background:#fff"],
+.dark [style*="background:#ffffff"] {
+  background-color: var(--bg-white) !important;
+}
+
+/* Cream sections */
+.dark .bg-\[\#faf7f2\],
+.dark [style*="background: #faf7f2"] {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Light gray sections */
+.dark .bg-\[\#f2f0ed\],
+.dark .bg-\[\#f6f4f1\],
+.dark .bg-\[\#f0eeeb\],
+.dark [style*="background: #f2f0ed"],
+.dark [style*="background: #f6f4f1"],
+.dark [style*="background: #f0eeeb"],
+.dark [style*="background: #F9F9F9"] {
+  background-color: #1e1b16 !important;
+}
+
+/* Text colors */
+.dark .text-\[\#1a1612\] { color: var(--text-primary) !important; }
+.dark .text-\[\#2d2926\] { color: #d4c9b8 !important; }
+.dark .text-\[\#5a5048\] { color: var(--text-subtle) !important; }
+.dark .text-\[\#8b7d6b\] { color: var(--text-muted) !important; }
+
+/* Borders */
+.dark .border-\[\#ede8e0\],
+.dark .border-\[\#e8e2d8\],
+.dark .border-\[\#ddd8cf\] {
+  border-color: var(--border-color) !important;
+}
+
+/* Header */
+.dark header[style*="background: #FFFFFF"],
+.dark header[style*="background: #F9F9F9"] {
+  background: #111009 !important;
+}
+
+/* Cards */
+.dark .bg-white.rounded-2xl,
+.dark .rounded-2xl.border { background-color: #1e1b16 !important; }
+
+/* Inputs */
+.dark input, .dark textarea, .dark select {
+  background: #1e1b16 !important;
+  color: #faf7f2 !important;
+  border-color: #2d2926 !important;
+}
+
+/* Dividers */
+.dark .divide-\[\#f6f4f1\] > * + * { border-color: #2a2520 !important; }
+
+/* ── Dark Mode — specific fixes ─────────────────── */
+
+/* BrandStory subtext */
+.dark .slide-right[style*="color: rgb(90, 80, 72)"],
+.dark .slide-right { color: #a09080 !important; }
+
+/* Any element with color #5a5048 */
+.dark [style*="color: #5a5048"],
+.dark [style*="color: rgb(90, 80, 72)"] {
+  color: #c4b89a !important;
+}
+
+/* bg-[#faf7f2] sections in dark */
+.dark section { background-color: var(--bg-secondary); }
+.dark section.bg-white { background-color: var(--bg-white) !important; }
+
+/* Standards & other light-bg sections */
+.dark [style*="background: #f0eeeb"],
+.dark [style*="background: #F0EEEB"] {
+  background-color: #1a1612 !important;
+}
+
+/* ProductGrid white bg */
+.dark .bg-white { background-color: var(--bg-white) !important; }
+
+/* Card borders in dark */
+.dark .border-\[\#ede8e0\] { border-color: #2d2926 !important; }
+.dark .border-\[\#e8e2d8\] { border-color: #2a2520 !important; }
+
+/* Filter buttons */
+.dark .filter-btn { 
+  color: #a09080 !important; 
+  border-color: #2d2926 !important; 
+}
+
+/* Headings in dark */
+.dark h1, .dark h2, .dark h3, .dark h4 {
+  color: #faf7f2;
+}
+
+/* ── FragranceNotes dark mode ─────────────────── */
+.dark .fn-card-inner {
+  background: #1e1b16 !important;
+}
+.dark .fn-card-inner:hover {
+  background: #242018 !important;
+}
+.dark .fn-card-inner h3 {
+  color: #faf7f2 !important;
+}
+.dark .fn-card-inner p {
+  color: #a09080 !important;
+}
+
+/* FragranceNotes section bg */
+.dark section[style*="background: #f2f0ed"] {
+  background: #111009 !important;
+}
+.dark .bg-\[\#f2f0ed\] {
+  background-color: #111009 !important;
+}
+
+/* General card text in dark */
+.dark p.text-\[\#1a1612\] { color: #faf7f2 !important; }
+.dark h1.text-\[\#1a1612\],
+.dark h2.text-\[\#1a1612\],
+.dark h3.text-\[\#1a1612\] { color: #faf7f2 !important; }
+
+/* ── Dark Mode — Contact, Shop, Dashboard, Standards ──────── */
+
+/* Contact sections */
+.dark .faq-item { background: #1e1b16 !important; border-color: #2d2926 !important; }
+.dark .faq-item p { color: #faf7f2 !important; }
+.dark .faq-item p.font-body.text-xs { color: #a09080 !important; }
+.dark section[style*="background: #faf7f2"] { background: #111009 !important; }
+
+/* Standards section */
+.dark .st-card-inner { background: #1e1b16 !important; border-color: #2d2926 !important; }
+.dark .st-card-inner h3 { color: #faf7f2 !important; }
+.dark .st-card-inner p { color: #a09080 !important; }
+
+/* Shop page */
+.dark .sg-bar { background: transparent; }
+.dark .sg-filter { color: #a09080 !important; border-color: #2d2926 !important; }
+.dark .sg-filter.active { background: #c9a96e !important; color: #fff !important; border-color: #c9a96e !important; }
+
+/* Product cards text */
+.dark .pg-card h3,
+.dark .sg-card h3,
+.dark .rp-card h3 { color: #faf7f2 !important; }
+
+/* Dashboard */
+.dark .dash-card,
+.dark .bg-white.rounded-2xl { background: #1e1b16 !important; }
+.dark .divide-y > * { border-color: #2a2520 !important; }
+
+/* Global text fixes */
+.dark p.font-body.text-xs.font-light { color: #a09080; }
+.dark h1.font-display, .dark h2.font-display, .dark h3.font-display { color: #faf7f2; }
+
+/* Form inputs in dark */
+.dark .cf-input, .dark .ds-input, .dark .addr-input,
+.dark .ef-input, .dark .co-input, .dark .login-input {
+  background: #1e1b16 !important;
+  border-color: #2d2926 !important;
+  color: #faf7f2 !important;
+}
+
+/* Info cards contact */
+.dark .cf-info-card { background: #1e1b16 !important; border-color: #2d2926 !important; }
+.dark .cf-info-card p { color: #faf7f2 !important; }
+.dark .cf-info-card .text-\[\#8b7d6b\] { color: #a09080 !important; }
+
+/* ── Dark Mode — Dashboard, Product Detail, Login ──────────── */
+
+/* Dashboard page bg */
+.dark .min-h-screen[style*="background: #ffffff"],
+.dark .min-h-screen[style*="background: #F9F9F9"] {
+  background: #111009 !important;
+}
+.dark [style*="background: #F9F9F9"] { background: #1a1612 !important; }
+
+/* Dashboard title bar */
+.dark [style*="background: #F9F9F9"].border-b { background: #1a1612 !important; }
+
+/* Dashboard sidebar */
+.dark .bg-white.rounded-2xl.border { background: #1e1b16 !important; border-color: #2d2926 !important; }
+
+/* Dashboard stats cards */
+.dark .rounded-2xl.border.border-\[\#ede8e0\] { background: #1e1b16 !important; border-color: #2d2926 !important; }
+
+/* Dashboard orders table */
+.dark .divide-y.divide-\[\#f6f4f1\] > * { border-color: #2a2520 !important; }
+.dark .hover\:bg-\[\#faf9f7\]:hover { background: #242018 !important; }
+
+/* Product detail page */
+.dark .bg-\[\#f6f4f1\] { background: #1e1b16 !important; }
+.dark .bg-\[\#faf7f2\] { background: #1a1612 !important; }
+
+/* Size buttons */
+.dark .pi-size-btn {
+  border-color: #2d2926 !important;
+  color: #a09080 !important;
+}
+.dark .pi-size-btn.active {
+  background: #faf7f2 !important;
+  color: #1a1612 !important;
+  border-color: #faf7f2 !important;
+}
+
+/* Qty buttons */
+.dark .pi-qty-btn {
+  border-color: #2d2926 !important;
+  color: #faf7f2 !important;
+}
+.dark .pi-qty-btn:hover { background: #2a2520 !important; }
+
+/* Add to Bag button */
+.dark .pi-add-btn {
+  background: #c9a96e !important;
+  color: #1a1612 !important;
+}
+.dark .pi-add-btn:hover { background: #e8d5b0 !important; }
+.dark .pi-add-btn.added { background: #c9a96e !important; color: #1a1612 !important; }
+
+/* Buy Now button */
+.dark .pi-buy-btn {
+  border-color: #faf7f2 !important;
+  color: #faf7f2 !important;
+  background: transparent !important;
+}
+.dark .pi-buy-btn:hover { background: #faf7f2 !important; color: #1a1612 !important; }
+
+/* Product tabs */
+.dark .pt-wrap { background: #1e1b16 !important; border-color: #2d2926 !important; }
+.dark .pt-tab { color: #a09080 !important; border-color: #2d2926 !important; }
+.dark .pt-tab.active { background: #faf7f2 !important; color: #1a1612 !important; }
+.dark .pt-content p { color: #a09080 !important; }
+
+/* Related products section */
+.dark section[style*="background: #faf7f2"] { background: #111009 !important; }
+
+/* Login page */
+.dark .min-h-screen[style*="background: #faf7f2"],
+.dark .min-h-screen[style*="background: #f2f0ed"] {
+  background: #111009 !important;
+}
+.dark .login-input {
+  background: #1e1b16 !important;
+  border-color: #2d2926 !important;
+  color: #faf7f2 !important;
+}
+.dark .otp-box {
+  background: #1e1b16 !important;
+  border-color: #2d2926 !important;
+  color: #faf7f2 !important;
+}
+.dark .social-btn {
+  background: #1e1b16 !important;
+  border-color: #2d2926 !important;
+  color: #faf7f2 !important;
+}
+.dark [style*="background: #f6f3ee"] { background: #1e1b16 !important; }
+.dark .verify-wrap, .dark .success-wrap {
+  background: transparent;
+}
+
+/* Breadcrumb & product detail general */
+.dark nav .font-body { color: #a09080 !important; }
+
+/* ── Dashboard — font size fixes ─────────────────── */
+.dashboard-page .font-body { font-size: 0.82rem; }
+.dashboard-page .font-body.text-\[0\.48rem\] { font-size: 0.6rem !important; }
+.dashboard-page .font-body.text-\[0\.5rem\]  { font-size: 0.62rem !important; }
+.dashboard-page .font-body.text-\[0\.52rem\] { font-size: 0.65rem !important; }
+.dashboard-page .font-body.text-\[0\.55rem\] { font-size: 0.68rem !important; }
+.dashboard-page .font-body.text-\[0\.58rem\] { font-size: 0.72rem !important; }
+.dashboard-page .font-body.text-\[0\.6rem\]  { font-size: 0.75rem !important; }
+.dashboard-page .font-body.text-xs   { font-size: 0.82rem !important; }
+.dashboard-page .font-body.text-sm   { font-size: 0.9rem !important; }
+.dashboard-page .font-body.text-\[0\.8rem\]  { font-size: 0.88rem !important; }
+
+/* ── Header responsive ── */
+@media (min-width: 1024px) {
+  .ali-mobile-only { display: none !important; }
+  .ali-drawer      { display: none !important; }
+  .ali-backdrop    { display: none !important; }
+}
+
+@media (max-width: 1023px) {
+  .ali-desktop-only { display: none !important; }
+}
