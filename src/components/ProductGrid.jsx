@@ -52,7 +52,7 @@ function SkeletonCard() {
 }
 
 /* ── Product Card ── */
-function ProductCard({ product, wishlisted, onWishlist }) {
+export function ProductCard({ product, wishlisted, onWishlist }) {
   const navigate   = useNavigate();
   const { addItem } = useCart();
   const [hovered, setHovered] = useState(false);
