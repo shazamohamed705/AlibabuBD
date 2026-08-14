@@ -420,7 +420,7 @@ export default function Header() {
       <div className="header-spacer" />
       <style>{`
         .header-spacer { height: 120px; }
-        @media (max-width: 1023px) { .header-spacer { height: 70px; } }
+        @media (max-width: 1023px) { .header-spacer { height: 0px; } }
       `}</style>
     </>
   );
