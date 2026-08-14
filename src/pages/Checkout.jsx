@@ -31,7 +31,7 @@ export default function Checkout() {
   const StepView = STEP_COMPONENTS[step];
 
   return (
-    <main className="min-h-screen pt-28 pb-20 px-4 lg:px-16" style={{ background: dark ? '#111009' : '#f6f4f1' }}>
+    <main className="min-h-screen pt-4 pb-20 px-4 lg:px-16" style={{ background: dark ? '#111009' : '#f6f4f1' }}>
 
       {/* Page title */}
       <div className="max-w-[1200px] mx-auto mb-8">

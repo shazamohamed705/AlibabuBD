@@ -311,12 +311,8 @@ export default function Header() {
               </button>
             </div>
 
-            {/* Mobile: cart + hamburger */}
+            {/* Mobile: hamburger only */}
             <div className="ali-mobile-only" style={{ display: 'flex', alignItems: 'center', gap: '2px', marginLeft: 'auto' }}>
-              <button className="ali-icon-btn" style={{ position: 'relative' }} onClick={() => setIsOpen(true)} aria-label="Cart">
-                <span className="ms">shopping_bag</span>
-                {count > 0 && <span className="ali-badge">{count}</span>}
-              </button>
               <button className="ali-icon-btn" onClick={() => setMenuOpen(v => !v)} aria-label="Menu">
                 <span className="ms">{menuOpen ? 'close' : 'menu'}</span>
               </button>
@@ -421,7 +417,11 @@ export default function Header() {
       </div>
 
       {/* Spacer */}
-      <div style={{ height: '120px' }} />
+      <div className="header-spacer" />
+      <style>{`
+        .header-spacer { height: 120px; }
+        @media (max-width: 1023px) { .header-spacer { height: 70px; } }
+      `}</style>
     </>
   );
 }

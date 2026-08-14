@@ -32,7 +32,7 @@ export default function Dashboard() {
     <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'Poppins, sans-serif' }}>
 
       {/* Top bar */}
-      <div style={{ background: '#fff', borderBottom: '1px solid #e5e7eb', padding: '1.5rem', paddingTop: '6rem' }}>
+      <div style={{ background: '#fff', borderBottom: '1px solid #e5e7eb', padding: '1rem 1.5rem' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <h1 style={{ fontFamily: 'Poppins', fontSize: '1.5rem', fontWeight: 800, color: '#14532d', margin: 0 }}>
             My Account

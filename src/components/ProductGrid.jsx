@@ -244,7 +244,7 @@ export default function ProductGrid({ title = 'Weekly Trending' }) {
     setWishlist(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
 
   return (
-    <section style={{ background: '#fff', padding: '2.5rem 0 3.5rem', fontFamily: 'Poppins, sans-serif' }}>
+    <section style={{ background: '#fff', padding: '2.5rem 0 1.5rem', fontFamily: 'Poppins, sans-serif' }}>
       <style>{`
         @keyframes pgPulse {
           0%,100% { opacity:1; } 50% { opacity:0.5; }
@@ -310,10 +310,14 @@ export default function ProductGrid({ title = 'Weekly Trending' }) {
           className="pg-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))',
-            gap: '1.25rem',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '1rem',
           }}
         >
+          <style>{`
+            @media (min-width: 640px)  { .pg-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+            @media (min-width: 1024px) { .pg-grid { grid-template-columns: repeat(4, 1fr) !important; } }
+          `}</style>
           {loading && products.length === 0
             ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
             : displayed.map(product => (

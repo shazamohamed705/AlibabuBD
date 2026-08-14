@@ -160,12 +160,11 @@ export default function ProductInfo({ product }) {
 
       {/* CTA Buttons */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
-        <button onClick={handleAdd} disabled={product.stock === 0} style={{
+        <button onClick={handleAdd} style={{
           fontFamily: 'Poppins', fontSize: '0.9rem', fontWeight: 700,
           padding: '14px', borderRadius: '10px', border: 'none',
           background: added ? '#15803d' : '#16a34a',
-          color: '#fff', cursor: product.stock === 0 ? 'not-allowed' : 'pointer',
-          opacity: product.stock === 0 ? 0.5 : 1,
+          color: '#fff', cursor: 'pointer',
           transition: 'background 0.2s',
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
         }}>
@@ -177,13 +176,12 @@ export default function ProductInfo({ product }) {
           {added ? '✓ Added to Cart!' : 'Add to Cart'}
         </button>
 
-        <button onClick={() => addItem(product, size, qty)} disabled={product.stock === 0} style={{
+        <button onClick={() => addItem(product, size, qty)} style={{
           fontFamily: 'Poppins', fontSize: '0.9rem', fontWeight: 700,
           padding: '14px', borderRadius: '10px',
           border: '2px solid #16a34a',
           background: '#fff', color: '#16a34a',
-          cursor: product.stock === 0 ? 'not-allowed' : 'pointer',
-          opacity: product.stock === 0 ? 0.5 : 1,
+          cursor: 'pointer',
           transition: 'all 0.2s',
         }}
           onMouseEnter={e => { e.currentTarget.style.background = '#16a34a'; e.currentTarget.style.color = '#fff'; }}

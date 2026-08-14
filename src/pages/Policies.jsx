@@ -40,7 +40,7 @@ export default function Policies() {
     <main className="min-h-screen" style={{ background: c.bg }} dir={isRtl ? 'rtl' : 'ltr'}>
 
       {/* Hero */}
-      <div className="pt-32 pb-16 px-6 lg:px-12 max-w-[1100px] mx-auto">
+      <div className="pt-4 pb-16 px-6 lg:px-12 max-w-[1100px] mx-auto">
         <p className="font-body text-[0.5rem] tracking-[0.35em] uppercase text-[#c9a96e] mb-3"
           style={{ fontWeight: isRtl ? 700 : undefined }}>
           {t('policies.eyebrow')}

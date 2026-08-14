@@ -24,7 +24,7 @@ export default function JournalHero() {
   const isRtl = lang === 'ar';
 
   return (
-    <section className="pt-32 pb-10 text-center overflow-hidden" style={{ background: dark ? '#111009' : '#fff' }}>
+    <section className="pt-4 pb-10 text-center overflow-hidden" style={{ background: dark ? '#111009' : '#fff' }}>
       <style>{`
         .jh-wrap {
           opacity: 0;

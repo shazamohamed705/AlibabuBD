@@ -62,7 +62,7 @@ export default function ProductDetail() {
       <style>{`@keyframes pdSpin { to { transform: rotate(360deg); } }`}</style>
 
       {/* Breadcrumb */}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.5rem 1.5rem 0', fontFamily: 'Poppins', fontSize: '0.78rem', color: '#6b7280', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1rem 1.5rem 0', fontFamily: 'Poppins', fontSize: '0.78rem', color: '#6b7280', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <Link to="/" style={{ color: '#6b7280', textDecoration: 'none' }}>Home</Link>
         <span>/</span>
         <Link to="/shop" style={{ color: '#6b7280', textDecoration: 'none' }}>Shop</Link>

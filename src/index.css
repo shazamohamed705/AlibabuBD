@@ -560,3 +560,14 @@
 @media (max-width: 1023px) {
   .ali-desktop-only { display: none !important; }
 }
+
+/* ── Mobile bottom nav spacer ── */
+@media (max-width: 1023px) {
+  footer { margin-bottom: 0; }
+  main { padding-bottom: 0; }
+}
+
+/* ── Page top spacing on mobile ── */
+@media (max-width: 1023px) {
+  .sh-content { padding-top: 0 !important; }
+}

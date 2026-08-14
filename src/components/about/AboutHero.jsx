@@ -60,7 +60,7 @@ export default function AboutHero() {
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,8,6,0.55) 0%, rgba(10,8,6,0.3) 50%, rgba(10,8,6,0.6) 100%)' }} />
 
       {/* Content centered */}
-      <div className="absolute inset-0 flex items-center justify-center" style={{ paddingTop: '80px' }}>
+      <div className="absolute inset-0 flex items-center justify-center">
         <div ref={contentRef} className="ah-content text-center px-6">
           <h1
             className="font-display font-light text-white leading-tight"

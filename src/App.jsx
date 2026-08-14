@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header        from './components/Header';
 import Footer        from './components/Footer';
 import CartDrawer    from './components/CartDrawer';
+import MobileNav     from './components/MobileNav';
 
 const Home          = lazy(() => import('./pages/Home'));
 const Shop          = lazy(() => import('./pages/Shop'));
@@ -28,6 +29,7 @@ export default function App() {
   return (
     <>
       <CartDrawer />
+      <MobileNav />
       <Suspense fallback={<Fallback />}>
         <Routes>
           <Route path="/login"     element={<Login />}     />
